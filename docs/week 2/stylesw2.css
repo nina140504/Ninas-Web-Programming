@@ -1,0 +1,124 @@
+/* Typography */
+body {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #fcfaf2; 
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Box system */
+
+/* Style the Summary (The Clickable Header) (asked ai)*/
+summary {
+    display: flex;
+    align-items: center; 
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+}
+
+/* For Safari/Chrome to remove the arrow (asked ai) */ 
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Add a custom indicator using a pseudo-element (asked ai)*/
+summary::before {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 1em; 
+    width: 25px;
+    margin-right: 8px;
+    font-weight: bold;
+    content: "›";
+
+}
+
+details[open] > summary::before {
+    content: "⌄";
+    padding-bottom: 0.8em;
+    
+}
+
+/* Continent Box */
+details.continent {
+    background-color: #f2ede4;
+    border: 1px solid #dcd7cc;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Country Box */
+details.country {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+/* City Box */
+details.city {
+    background-color: #f2ede4;
+    border: 1px solid #dcd7cc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+/* Spot Card */
+details.spot-card {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+
+/* Header */
+summary h2, summary h3, summary h4, summary h5 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 1.2;
+
+}
+
+/* Images */
+img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+
+video.spot-video, img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin: 15px 0;
+    display: block;
+    border: 1px solid #eee;
+    background-color: #000; /* Fallback background for videos */
+}
+
+.spot-tags {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.spot-tags li {
+    background-color: #e8f0e8;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #d0ddd0;
+}
