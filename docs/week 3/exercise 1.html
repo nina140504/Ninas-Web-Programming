@@ -43,7 +43,29 @@
         box-sizing: border-box;
     }
     
+    .col1 {
+        flex: 3;
+    }
 
+    .col2 {
+        flex: 2;
+    }
+
+    .col1, .col2 {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .red, .blue, .yellow {
+        height: 150px;
+    }
+
+    .white-1, .white-2 {
+        flex: 1;
+    }
+
+    
     /* Step 3: position each block */
     .red    {
         background-color:#dd0100;
@@ -98,11 +120,15 @@
 
     <div class="canvas">
         <!-- 5 colored blocks -->
-        <div class="block red">height:150px</div>
-        <div class="block white-1">width: 60%</div>
-        <div class="block yellow">height:150px</div>
-        <div class="block blue">height:150px</div>
-        <div class="block white-2">width: 40%</div>
+        <div class="col1">
+            <div class="block red">height:150px</div>
+            <div class="block white-1">width: 60%</div>
+        </div>
+        <div class="col2">
+            <div class="block yellow">height:150px</div>
+            <div class="block blue">height:150px</div>
+            <div class="block white-2">width: 40%</div>
+        </div>
     </div>
 
     

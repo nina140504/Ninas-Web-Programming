@@ -1,0 +1,168 @@
+/* typography */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #fcfaf2; /* Soft off-white/beige canvas */
+    color: #333333;
+    line-height: 1.5;
+    margin: 0;
+    padding: 30px;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #d4c5b3;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-weight: 700;
+    color: #4a443f;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+h2, h3, h4 {
+    margin: 0 0 15px 0;
+    font-weight: 600;
+    color: #5a524b;
+}
+
+/* general layout */
+.dashboard-layout {
+    display: flex;
+    gap: 30px; 
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left Column, 65% of the width */
+.bucket-list-section {
+    flex: 2; 
+}
+
+/* Right Column, 35% of the width */
+.strategy-sidebar {
+    flex: 1;
+}
+
+/* details, positioning */
+
+.planner-card {
+    position: relative; 
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px; /* Rounded corners requirement */
+    margin-bottom: 25px;
+    overflow: hidden; /* Keeps child elements from breaking the border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10; 
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* colors for different priority ranks */
+.priority-top { background-color: #f7e6e6; color: #a64d4d; border: 1px solid #e6c8c8; }
+.priority-medium { background-color: #fcf3e3; color: #b3863b; border: 1px solid #ebd9b9; }
+.priority-low { background-color: #e8f0e8; color: #5d6d5d; border: 1px solid #d0ddd0; }
+
+
+.sticky-planner-box {
+    position: sticky;
+    top: 30px; 
+    background-color: #f2ede4; 
+    border: 1px solid #dcd7cc;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+/* details, background */
+
+/* Image placeholder (used AI for coming up with it) */
+.card-image-placeholder {
+    height: 180px;
+    background-color: #e0d9cf; /* Elegant placeholder tone */
+    position: relative;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.image-overlay h3 {
+    color: #ffffff; 
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+/* in card elements */
+.card-content {
+    padding: 20px;
+}
+
+.card-content p {
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.spot-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.spot-tags li {
+    background-color: #f5f5f5;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: #555;
+    border: 1px solid #e8e8e8;
+}
+
+.planner-status {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e6e0d5;
+}
+
+.planner-status p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.planner-checklist ul {
+    list-style-type: "✓ ";
+    padding-left: 20px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.planner-checklist li {
+    margin-bottom: 8px;
+}
+
