@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fame is a bee. (1788) | The Poetry Foundation</title>
+    
+    <meta name="description" content="Fame is a bee. It has a song— It has a sting— Ah, too, it has a wing.">
+    <meta name="keywords" content="fame, song, sting, Emily Dickinson, poetry">
+    <meta name="author" content="Emily Dickinson">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Cabin:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* === COLORS === */
+        :root {
+            --color-red: #ed1c24;
+            --color-black: #000000;
+            --color-white: #ffffff;
+            --color-gray: #767676;
+            --color-gray-dark: #494949;
+            --color-gray-light: #e5e5e5;
+            --header-height: 120px;
+        }
+
+        /* === RESET === */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img, svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* === LAYOUT === */
+        .container {
+            width: 100%;
+            max-width: 1178px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* === POEM === */
+        .poem-body {
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 1.375rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .poem-line {
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+
+        /* === HEADER === */
+        .site-header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: var(--color-white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            flex-direction: column;
+            padding: 0.75rem 0 0;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 0.5rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 95px;
+            height: auto;
+        }
+
+        .logo-text {
+            color: var(--color-red);
+            font-family: 'Montserrat', 'Gill Sans', sans-serif;
+            font-weight: 800;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* === NAVIGATION === */
+        .main-nav {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .main-nav {
+                display: flex;
+                gap: 2rem;
+                margin-top: -1.4rem;
+                padding: 0.4rem 0 1.4rem;
+                padding-left: calc(95px + 1rem);
+            }
+        }
+
+        .nav-link {
+            font-family: sans-serif;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            color: var(--color-black);
+            transition: color 0.25s;
+        }
+
+        .nav-link:hover {
+            color: var(--color-red);
+            text-decoration: underline;
+        }
+
+        /* === POETRY MAGAZINE LINK === */
+        .magazine-link {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .magazine-link {
+                display: block;
+            }
+        }
+
+        .magazine-link a {
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 400;
+            font-synthesis: none;
+            color: var(--color-black);
+            letter-spacing: -0.02em;
+            transition: color 0.25s;
+        }
+
+        .magazine-link a em {
+            font-style: italic;
+        }
+
+        .magazine-link a:hover {
+            color: var(--color-red);
+        }
+
+        /* === MAIN CONTENT === */
+        .main-content {
+            padding-top: calc(var(--header-height) + 2rem);
+            padding-bottom: 3.5rem;
+        }
+
+        /* === ARTICLE LAYOUT === */
+        .article-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .article-container { gap: 2rem; }
+            .article-main { grid-column: 2 / 9; }
+            .article-sidebar { grid-column: 9 / 13; }
+            .article-header { margin-bottom: 2rem; }
+        }
+
+        .article-main { grid-column: 1 / -1; }
+        .article-sidebar { grid-column: 1 / -1; }
+
+        /* === ARTICLE HEADER === */
+        .article-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-title {
+            font-family: sans-serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-byline {
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--color-gray-dark);
+        }
+
+        .article-byline a {
+            color: var(--color-black);
+            text-decoration: underline;
+            transition: color 0.25s;
+        }
+
+        .article-byline a:hover {
+            color: var(--color-red);
+        }
+
+        /* === LINKS === */
+        .link-red {
+            text-decoration: underline;
+            transition: color 0.25s;
+        }
+
+        .link-red:hover {
+            color: var(--color-red);
+        }
+
+        /* === FOOTER === */
+        .site-footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 2rem 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-inner {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-logo { width: 95px; }
+
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+        }
+
+        .footer-link {
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--color-white);
+            transition: color 0.25s;
+        }
+
+        .footer-link:hover { color: var(--color-red); }
+
+        .footer-info {
+            font-size: 0.9rem;
+            color: var(--color-gray);
+        }
+
+        /* === SIDEBAR === */
+        .sidebar-section { padding: 1.5rem 0; }
+
+        .sidebar-title {
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .poet-card img { margin-bottom: 1rem; }
+
+        .poet-card h3 {
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .poet-card p {
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--color-gray-dark);
+        }
+
+        /* === UTILITY === */
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+
+        /* === PRINT === */
+        @media print {
+            .site-header, .site-footer { display: none; }
+            .main-content { padding-top: 0; }
+            .article-main { grid-column: 1 / -1; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==========================================
+         HEADER
+         ========================================== -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <!-- Top row: Logo + Magazine -->
+                <div class="header-top">
+                    <!-- Logo -->
+                    <a href="/" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 64.8 36.71" aria-hidden="true">
+                        <path d="M22.4.83c0 .21-1.19-.12-1.19.54s2.86 0 2.86.29-1.25 0-1.24.46 2.33-.08 2.35.19-.82 0-.82.41a1.2 1.2 0 0 0 .95.22c1.69.07 3.42.21 5 .38 10 1.05 19.47 3.35 21.28 4.47 1.38-3-6.84-4.54-14.18-6C31.14.54 20.23-.64 20.26.4c0 .72 2.12.2 2.14.43m28.48 25a1 1 0 0 1-.32 1.39C49 28.83 44 31.4 40.88 30.08a3.46 3.46 0 0 1 2-1.25.78.78 0 0 0 1.46.23 16 16 0 0 0 2.31-.79c1.34-.59 2.41-1.2 2.2-1.59s-5.12-1.16-5.23-1.21a.31.31 0 0 0-.16 0 16.08 16.08 0 0 1-5.08.78 18.48 18.48 0 0 1-4.09-.46c-.15 0-1.33-.4-1.33-.4a5.78 5.78 0 0 0-1.13-.21 3.43 3.43 0 0 0-1.74.47s-8.1 4.52-14.9 7.95c-3.94 2-6.4 3.16-9 3a3.85 3.85 0 0 1 1.51-1.87s.85 1.56 1.62-.08A11.27 11.27 0 0 0 15.19 31a9.07 9.07 0 0 1 2.7-2.16c1.46-.79 3.27-1.93 3.41-2.69a.67.67 0 0 0 0-.12 6.18 6.18 0 0 1 1.32-4.87c.31-.46-1.26-1.28-4.58 0a40.47 40.47 0 0 1-4.53 1.73c-.24-.19 1-.84 2.24-1.38 1-.41 1.94-.69 1.83-.83s-1.92.46-3.12 1a15.82 15.82 0 0 1-3.13 1.26c-.33-.26 1.26-.94 2.86-1.68 1.4-.69 2.16-.91 2-1s-1.19.24-2.78.84c-1.82.67-3.7 1.76-3.86 1.58s1.46-1.06 3.17-1.83c1.38-.62 1.89-.83 1.75-1s-.74.11-2.69.83-3.88 1.94-4.06 1.72 1.12-.88 2.63-1.63 2.18-.92 2-1.1-1.26.28-3.16 1-3.77 1.83-3.91 1.64 1.25-.9 3-1.72c1.48-.71 2-.92 1.81-1.06s-1.37.47-3.14 1.16-3.25 1.57-3.4 1.38.93-.75 2.45-1.4 2.7-1 2.49-1.18-5.95 2.19-6.13 2.06.64-.49 2.38-1.17c1.44-.56 2.45-.85 2.3-1s-.51.05-1.91.52-3.8 1.59-3.92 1.4 1.09-.7 2.22-1.13c1-.36 1.82-.6 1.64-.69s-1.58.42-2.91.84c-1.16.4-2.05.78-2.16.56s1-.53 2-.83c.74-.22 1.15-.34 1.07-.44a3 3 0 0 0-1.35.16A3.54 3.54 0 0 1 .14 20c-.11-.49 6.16-1.59 11-1.91 8.68-.57 12 1.67 12.46 2a.11.11 0 0 0 .13 0 14.16 14.16 0 0 1 9.07-1.72c-.57-.78.29-.81.3-1.11s-.71-.31-.74-.88.65-.52.66-.79-.42-.16-.41-.68.7-.28.7-.58a3.82 3.82 0 0 1-.4-.86c0-.52.63-.32.63-.69a.63.63 0 0 0-.6-.56c-1.2-.35-8.11-.3-8.29-.82s.28-.51.27-.68-1.76-.32-3.38-.29c-1 0-1.17-.33-1.16-.68a.44.44 0 0 0-.54-.5c-1.23 0-1.68 0-1.69-.5 0-.36.24-.71-.77-.61-.82.09-.49-.28-.58-.65s-1.4.25-1.4-.35c0-1.11-1.92 0-2-.82s2.23-.42 2.22-1-3.37.38-4.17.43-.62-.22-.75-.53-2.27.32-2.31-.07.61-.08.52-.41-2.31.51-2.38-.2 13-2 23.63-.88C41 4.78 51.37 7.4 51.78 8.37c.33.8-1 1.08-2.59 3a17.41 17.41 0 0 0-2.59 5 .19.19 0 0 0 .1 0 21 21 0 0 0 6.06-2.75 34.64 34.64 0 0 1 4.36-2.21c.61-.25.54-1.55.66-1.62s.22 1.21.64 1.09.13-1.14.24-1.2a1.41 1.41 0 0 1 .6 1.2.18.18 0 0 0 .11.17c1.5.55 5.72 2.27 5.42 3.55-.2.88-1.28.68-2 .55a6.67 6.67 0 0 0-2.28.1 2.56 2.56 0 0 1-2.23.06l-.07.08c-.47.2-1.35.71-1.35.71a21.14 21.14 0 0 0-4.51 3.9 17.84 17.84 0 0 1-3 2.75v.05c.42.12 4.35 1.2 4.65 1.3s1.67.59.56 2.12-5.1 5-8.08 4.53a3.61 3.61 0 0 1 1.45-1.45s.77 1.06 1.26-.22a17.52 17.52 0 0 0 4.07-3.25c.06-.07-.07-.11-.12-.11h-2.1z"></path>
+                    </svg>
+                    <span class="logo-text">Poetry Foundation</span>
+                </a>
+
+                    <!-- Poetry Magazine -->
+                    <div class="magazine-link">
+                        <a href="/poetrymagazine/">
+                            <em>Poetry</em> magazine
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="/poems" class="nav-link">Poems &amp; Poets</a>
+                    <a href="/topics" class="nav-link">Topics &amp; Themes</a>
+                    <a href="/features" class="nav-link">Features</a>
+                    <a href="/programs" class="nav-link">Grants &amp; Programs</a>
+                    <a href="/about" class="nav-link">About Us</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+    <main class="main-content" id="mainContent" role="main">
+        <article class="container">
+            <div class="article-container">
+                
+                <!-- Main Content Column -->
+                <div class="article-main">
+                    
+                    <!-- Article Header -->
+                    <header class="article-header">
+                        <h1 class="article-title">Fame is a bee. (1788)</h1>
+                        <div class="article-byline">
+                            By <a href="/poets/emily-dickinson" class="link-red">Emily Dickinson</a>
+                        </div>
+                    </header>
+
+                    <!-- Poem Body -->
+                    <div class="poem-body">
+                        <div class="poem-line">Fame is a bee.</div>
+                        <div class="poem-line">It has a song—</div>
+                        <div class="poem-line">It has a sting—</div>
+                        <div class="poem-line">Ah, too, it has a wing.</div>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="article-sidebar">
+                    
+                    <!-- About the Poet -->
+                    <section class="sidebar-section">
+                        <h2 class="sidebar-title">About the Poet</h2>
+                        <div class="poet-card">
+                            <figure class="poet-image mb-4">
+                                <img src="https://s3-us-east-2.amazonaws.com/cdn-test.poetryfoundation.org/content/images/c1140d659d1ae1fc5db36c989bcf37941dfca9ee.jpeg" 
+                                     alt="A daguerreotype of Emily Dickinson at age 16"
+                                     width="200"
+                                     loading="lazy">
+                            </figure>
+                            <h3 class="poet-card">
+                                <a href="/poets/emily-dickinson" class="link-red">Emily Dickinson</a>
+                            </h3>
+                            <p>1830–1886</p>
+                        </div>
+                    </section>
+
+                </aside>
+            </div>
+        </article>
+    </main>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                
+                <!-- Footer Logo -->
+                <div class="footer-logo">
+                    <a href="/" aria-label="Poetry Foundation Homepage">
+                        <svg viewBox="0 0 64.8 36.71" width="95" height="54" aria-hidden="true">
+                            <path fill="#ffffff" d="M22.4.83c0 .21-1.19-.12-1.19.54s2.86 0 2.86.29-1.25 0-1.24.46 2.33-.08 2.35.19-.82 0-.82.41a1.2 1.2 0 0 0 .95.22c1.69.07 3.42.21 5 .38 10 1.05 19.47 3.35 21.28 4.47 1.38-3-6.84-4.54-14.18-6C31.14.54 20.23-.64 20.26.4c0 .72 2.12.2 2.14.43m28.48 25a1 1 0 0 1-.32 1.39C49 28.83 44 31.4 40.88 30.08a3.46 3.46 0 0 1 2-1.25.78.78 0 0 0 1.46.23 16 16 0 0 0 2.31-.79c1.34-.59 2.41-1.2 2.2-1.59s-5.12-1.16-5.23-1.21a.31.31 0 0 0-.16 0 16.08 16.08 0 0 1-5.08.78 18.48 18.48 0 0 1-4.09-.46c-.15 0-1.33-.4-1.33-.4a5.78 5.78 0 0 0-1.13-.21 3.43 3.43 0 0 0-1.74.47s-8.1 4.52-14.9 7.95c-3.94 2-6.4 3.16-9 3a3.85 3.85 0 0 1 1.51-1.87s.85 1.56 1.62-.08A11.27 11.27 0 0 0 15.19 31a9.07 9.07 0 0 1 2.7-2.16c1.46-.79 3.27-1.93 3.41-2.69a.67.67 0 0 0 0-.12 6.18 6.18 0 0 1 1.32-4.87c.31-.46-1.26-1.28-4.58 0a40.47 40.47 0 0 1-4.53 1.73c-.24-.19 1-.84 2.24-1.38 1-.41 1.94-.69 1.83-.83s-1.92.46-3.12 1a15.82 15.82 0 0 1-3.13 1.26c-.33-.26 1.26-.94 2.86-1.68 1.4-.69 2.16-.91 2-1s-1.19.24-2.78.84c-1.82.67-3.7 1.76-3.86 1.58s1.46-1.06 3.17-1.83c1.38-.62 1.89-.83 1.75-1s-.74.11-2.69.83-3.88 1.94-4.06 1.72 1.12-.88 2.63-1.63 2.18-.92 2-1.1-1.26.28-3.16 1-3.77 1.83-3.91 1.64 1.25-.9 3-1.72c1.48-.71 2-.92 1.81-1.06s-1.37.47-3.14 1.16-3.25 1.57-3.4 1.38.93-.75 2.45-1.4 2.7-1 2.49-1.18-5.95 2.19-6.13 2.06.64-.49 2.38-1.17c1.44-.56 2.45-.85 2.3-1s-.51.05-1.91.52-3.8 1.59-3.92 1.4 1.09-.7 2.22-1.13c1-.36 1.82-.6 1.64-.69s-1.58.42-2.91.84c-1.16.4-2.05.78-2.16.56s1-.53 2-.83c.74-.22 1.15-.34 1.07-.44a3 3 0 0 0-1.35.16A3.54 3.54 0 0 1 .14 20c-.11-.49 6.16-1.59 11-1.91 8.68-.57 12 1.67 12.46 2a.11.11 0 0 0 .13 0 14.16 14.16 0 0 1 9.07-1.72c-.57-.78.29-.81.3-1.11s-.71-.31-.74-.88.65-.52.66-.79-.42-.16-.41-.68.7-.28.7-.58a3.82 3.82 0 0 1-.4-.86c0-.52.63-.32.63-.69a.63.63 0 0 0-.6-.56c-1.2-.35-8.11-.3-8.29-.82s.28-.51.27-.68-1.76-.32-3.38-.29c-1 0-1.17-.33-1.16-.68a.44.44 0 0 0-.54-.5c-1.23 0-1.68 0-1.69-.5 0-.36.24-.71-.77-.61-.82.09-.49-.28-.58-.65s-1.4.25-1.4-.35c0-1.11-1.92 0-2-.82s2.23-.42 2.22-1-3.37.38-4.17.43-.62-.22-.75-.53-2.27.32-2.31-.07.61-.08.52-.41-2.31.51-2.38-.2 13-2 23.63-.88C41 4.78 51.37 7.4 51.78 8.37c.33.8-1 1.08-2.59 3a17.41 17.41 0 0 0-2.59 5 .19.19 0 0 0 .1 0 21 21 0 0 0 6.06-2.75 34.64 34.64 0 0 1 4.36-2.21c.61-.25.54-1.55.66-1.62s.22 1.21.64 1.09.13-1.14.24-1.2a1.41 1.41 0 0 1 .6 1.2.18.18 0 0 0 .11.17c1.5.55 5.72 2.27 5.42 3.55-.2.88-1.28.68-2 .55a6.67 6.67 0 0 0-2.28.1 2.56 2.56 0 0 1-2.23.06l-.07.08c-.47.2-1.35.71-1.35.71a21.14 21.14 0 0 0-4.51 3.9 17.84 17.84 0 0 1-3 2.75v.05c.42.12 4.35 1.2 4.65 1.3s1.67.59.56 2.12-5.1 5-8.08 4.53a3.61 3.61 0 0 1 1.45-1.45s.77 1.06 1.26-.22a17.52 17.52 0 0 0 4.07-3.25c.06-.07-.07-.11-.12-.11h-2.1z"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Footer Navigation -->
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="/poems" class="footer-link">Poems</a>
+                    <a href="/poets" class="footer-link">Poets</a>
+                    <a href="/poetrymagazine" class="footer-link">Poetry Magazine</a>
+                    <a href="/about" class="footer-link">About</a>
+                    <a href="/contact" class="footer-link">Contact</a>
+                    <a href="/privacy" class="footer-link">Privacy</a>
+                    <a href="/terms" class="footer-link">Terms</a>
+                </nav>
+
+                <!-- Footer Info -->
+                <div class="footer-info">
+                    <p>61 West Superior Street<br>Chicago, IL 60654</p>
+                    <p>© 2026 Poetry Foundation</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
